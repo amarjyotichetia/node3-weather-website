@@ -12,6 +12,9 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 
+//for heroku config for deploy
+const port = process.env.PORT || 3000
+
  /*
  //homepage basic part
  //incomming request/response req/res
@@ -175,6 +178,6 @@ app.get('*', (req, res) => {
 
  //start server
  //http://127.0.0.1:3000/
- app.listen(3000, () => {
-   console.log('Server stated...')
+ app.listen(port, () => {
+   console.log('Server stated...'+port)
 })
